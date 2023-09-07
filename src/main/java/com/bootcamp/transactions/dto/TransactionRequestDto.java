@@ -1,7 +1,6 @@
 package com.bootcamp.transactions.dto;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 import lombok.Data;
 
 /**
@@ -15,6 +14,7 @@ public class TransactionRequestDto {
 	private String customerId;
 	private String transactionType; //DEPOSITO, RETIRO, PAGO, CONSUMO
 	private Double amount;
-	private Date transactionDate;
+	private LocalDateTime transactionDate;
 	private String customerType;
+	private Double balance;
 }

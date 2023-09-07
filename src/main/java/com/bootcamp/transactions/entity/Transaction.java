@@ -3,10 +3,12 @@ package com.bootcamp.transactions.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  * Clase de entidad
@@ -14,6 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor
 @Document(collection="transaction")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
 	@Id
 	private String id;
@@ -22,6 +25,7 @@ public class Transaction {
 	private String customerId;
 	private String transactionType;
 	private Double amount;
-	private Date transactionDate;
+	private LocalDateTime transactionDate;
 	private String customerType;
+	private Double balance;
 }
